@@ -1,0 +1,36 @@
+l=[1,1,1,1]
+n=2
+count=0
+for i in range(len(l)):
+
+    if n-l[i] in l:
+        #means complent is present
+        count+=1
+
+        #check for repeatition
+        repeatation=l.count(n-l[i])
+        #print(repeatation)
+
+        count+=repeatation-1
+        #-1 because already one time it get added
+
+        #agar element self hai to count ko ek bar reduce karo
+        #output dekho isma hamesha 1 ko 4 times count kar raha hai jo ki 3 time
+        #hona chahiye isliya ham check karta hai ki agar diff khud ka equal hai to
+        #ek bar minus or karo kyu ki counting ka time khud ko count nahi karwana hai
+        #apna aap ko
+        if l[i] ==  n-l[i]:
+            count-=1
+
+
+print(int(count/2))
+
+
+
+time complexity
+O(n) reduce from O(n2)
+space
+O(1)
+
+
+
