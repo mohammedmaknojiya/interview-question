@@ -1,0 +1,14 @@
+
+
+l=[1,2,3,2,4,5,4]
+d={}
+for i in range(len(l)):
+    if l[i] in d:
+        print(l[i])
+    else:
+        d.setdefault(l[i])
+
+time comp
+O(N)
+because for dict lookup time is constant 
+hence only time for FOR LOOP is required
