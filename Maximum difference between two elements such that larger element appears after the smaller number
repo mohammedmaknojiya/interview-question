@@ -1,0 +1,21 @@
+#https://www.geeksforgeeks.org/maximum-difference-between-two-elements/  
+#method 2
+
+l=[1, 2, 90, 10, 110]
+
+
+min_ele=l[0]
+max_diff=l[1]-l[0]
+
+for i in range(1,len(l)):
+
+    if l[i]-min_ele > max_diff:
+        max_diff = l[i] - min_ele
+
+    if l[i]< min_ele:
+        min_ele=l[i]
+
+print(max_diff)
+
+time comp
+O(N)
