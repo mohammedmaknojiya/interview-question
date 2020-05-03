@@ -1,0 +1,17 @@
+#l=[4,4,6,6]
+l=[4,4,4,4]
+from collections import Counter
+
+dic=Counter(l)
+key=8
+res=0
+for k in dic:
+    #agar element khud uska inverse ka equal nahi hai tab
+    if k!=key-k:
+        res+= dic[k] * dic[key-k]
+    #agar element khud uska inverse ka equal tab
+    elif k==key-k:
+        res+= dic[k] * (dic[k]-1)
+
+print(res//2)
+
