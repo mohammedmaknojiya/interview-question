@@ -28,7 +28,7 @@ print(int(count/2))
 
 
 time complexity
-O(n) reduce from O(n2)
+O(n2) 
 space
 O(1)
 
