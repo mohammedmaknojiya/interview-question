@@ -1,3 +1,24 @@
+#https://www.geeksforgeeks.org/given-an-array-arr-find-the-maximum-j-i-such-that-arrj-arri/
+# ya problem me hamko do index ka diff find karna tha jo ki max ho 
+#iska sath sath aisa condition bhi tha ki i index ka element lesser ho j index ka element sa
+
+#ham is problem ko do part me divide kardega 
+#ek part me ham array ko sort kadega 
+#jiski wajah sa hame phir a[i]> a[j] condition ki chinta nahi karni padhegi because wo sorted hai menas evantually a[j] hamesha greater 
+#rahega than a[i]
+#now hamko ab index ka diff find karna hai jo ki max ho
+#to uska liya ham sorted array ka use karke uska index, with respect to original array ka dict bana dega 
+#so ham directly max diff of two ele in an array ka method sa max diff find karlega 
+
+# -1 use karne ka reason ya hai ki kyu ki agar duplicate ele ata hai tab usko handle karna ka liya
+#eg suppose [1,3,2,2,4]
+#  to iska sorted array [1,2,2,3,4]
+# now dict bana ga to {1:[0],2:[2,3],3:[1],4:[4]}
+#now isma 2 hai 2 index par
+#hamko max diff find karna hai
+#matlab 2 ka index me max index hamko lena padha ga 
+#isliya max elem ko access karna ka liya -1
+
 n = 6
 org = [1, 2, 3, 4, 5, 6]
 d={}
