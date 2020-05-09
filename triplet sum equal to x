@@ -1,0 +1,36 @@
+#https://www.tutorialcup.com/interview/array/triplet-with-given-sum.htm
+
+l=[2,3,4,5,10]
+
+l.sort()
+print(l)
+x=15
+count=0
+
+for i in range(len(l)-2):
+    j=i+1
+    k=len(l)-1
+##    print("i",i)
+##    print("j",j)
+##    print("k",k)
+##
+##    print("l[i]",l[i])
+##    print("l[j]",l[j])
+##    print("l[k]",l[k])
+    
+
+    #a=l[i]+l[j]+l[k]
+    #print("a",a)
+    
+    while j < k :
+        a=l[i]+l[j]+l[k]
+        if a==x:
+            count+=1
+            #break
+            j+=1
+
+        elif a<x:
+            j+=1
+        elif a>x:
+            k-=1
+print(count)
