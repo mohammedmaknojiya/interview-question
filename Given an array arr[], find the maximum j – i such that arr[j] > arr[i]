@@ -1,0 +1,31 @@
+n = 6
+org = [1, 2, 3, 4, 5, 6]
+d={}
+
+copy=org.copy()
+copy.sort()
+
+for i in range(len(copy)):
+    if copy[i] in d:
+        d[copy[i]].append(org.index(copy[i]))
+
+    else:
+        d[copy[i]]=[org.index(copy[i])]
+print(d)
+
+
+k=list(d.values())
+print(k)
+max_diff=k[1][-1] - k[0][-1]
+min_val= k[0][-1]
+
+
+for i in range(n):
+    if k[i][-1] - min_val > max_diff:
+        max_diff = k[i][-1]- min_val
+    if k[i][-1] < min_val:
+        min_val = k[i][-1]
+    
+
+print(max_diff)
+    
