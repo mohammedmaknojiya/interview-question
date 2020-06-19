@@ -1,0 +1,86 @@
+#https://www.geeksforgeeks.org/convert-an-array-to-reduced-form-set-1-simple-and-hashing/
+#https://www.youtube.com/watch?v=JrzIgYS3SqM&t=538s
+
+
+this algo takes O(nlogn)
+
+
+This below code works if the length of array is and array ele are [1,2,3,4,5]
+same if the len is 6 then array ele should be [1,2,3,4,5,6]
+they can be range but range should be from 1,2, to n
+
+#https://www.hackerrank.com/challenges/minimum-swaps-2/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+
+checkout this hackerrank question
+
+
+
+########################################################################################################################
+
+arr=[2,3,4,1,5]
+vis={}
+for i in range(len(arr)):
+    vis[arr[i]]=0
+vis={2:0,3:0,4:0,1:0,5:0}
+
+s=0
+
+for i in range(len(arr)):
+
+    if vis[arr[i]]==0:
+        a=i
+        b=arr[i]-1
+
+        le=1
+
+        vis[arr[i]]=1
+
+        while(b!=i):
+            vis[arr[b]]=1
+            a=b
+            b=arr[b]-1
+
+            le+=1
+        if le>0:
+            s+=le-1
+print(s)
+          
+###################################################################################################################          
+ if the ele are like [1,2,3,4,7,6,99,30]
+ 
+ then here len of array is 9 but the ele is ranges in 1 to 99 
+ so this algo doesn't work
+ for that we will make this array in the compress range form
+ 
+ 
+ the compression algo also take O(nlogn) time
+ 
+ 
+ #######################################################################################################################
+ 
+ a=[10,40,20,30,50]
+
+temp=a.copy()
+
+temp.sort()
+
+h={}
+replace_val=1
+for i in range(len(temp)):
+    h[temp[i]]=replace_val
+    replace_val+=1
+
+print(h)
+
+for i in range(len(a)):
+    if a[i] in h:
+        a[i]=h[a[i]]
+
+print(a)
+###########################################################################################################################
+here we replace smallest val with 1 then next greatest with 2 then 3 and so on
+
+
+ 
+ 
+ 
